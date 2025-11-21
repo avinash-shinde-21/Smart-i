@@ -1,4 +1,5 @@
-import { ShoppingCart, Search, Menu, User } from 'lucide-react';
+import { ShoppingCart, Search, Menu, User, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { CartItem } from '../types/product';
 
@@ -33,9 +34,9 @@ export default function Header({ cartItems, onCartClick }: HeaderProps) {
             <button className="p-2 text-gray-300 hover:text-blue-400 transition-colors">
               <Search size={20} />
             </button>
-            <button className="p-2 text-gray-300 hover:text-blue-400 transition-colors">
-              <User size={20} />
-            </button>
+            <Link to="/admin/login" className="p-2 text-gray-300 hover:text-blue-400 transition-colors">
+              <Settings size={20} />
+            </Link>
             <button
               onClick={onCartClick}
               className="relative p-2 text-gray-300 hover:text-blue-400 transition-colors"
